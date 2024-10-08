@@ -24,6 +24,8 @@ Ouvrir le projet dans Eclipse IDE.
 S'assurer que le JDK est installé et configuré.
 Compiler et exécuter le programme.
 Sélectionner une image à laquelle appliquer le filtre gaussien.
+
+
 Auteur
 NDZANA SAKA
 
