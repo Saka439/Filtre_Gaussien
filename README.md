@@ -1,8 +1,11 @@
 Filtre Gaussien en Java
+
 Description
+
 Ce projet implémente un filtre gaussien en Java, utilisé pour appliquer un effet de flou sur des images. Le filtre gaussien est un outil essentiel en traitement d'images pour réduire le bruit et adoucir les contours. Il est couramment utilisé dans des domaines comme la vision par ordinateur, la photographie numérique et les systèmes de reconnaissance d'images.
 
 Fonctionnalités
+
 Chargement d'images au format standard (JPEG, PNG, etc.)
 Application d'un filtre gaussien avec un noyau paramétrable
 Sauvegarde de l'image filtrée
