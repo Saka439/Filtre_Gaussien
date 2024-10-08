@@ -16,7 +16,7 @@ public class ClientHandler extends Thread {
     public ClientHandler(Socket socket, int clientNumber) {
         this.socket = socket;
         this.clientNumber = clientNumber;
-        this.userDatabase = loadUserDatabase(); // Charger la base de données des utilisateurs depuis le fichier
+        this.userDatabase = loadUserDatabase(); 
         System.out.println("Nouvelle connexion avec le client# " + clientNumber + " à " + socket);
     }
 
@@ -25,25 +25,25 @@ public class ClientHandler extends Thread {
             DataInputStream in = new DataInputStream(socket.getInputStream());
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
-            // Lire le nom d'utilisateur et le mot de passe
+           
             String username = in.readUTF().trim();
             String password = in.readUTF().trim();
             System.out.println("Reçu - Nom d'utilisateur: " + username + ", Mot de passe: " + password);
 
-            // Authentifier ou créer l'utilisateur
+          
             if (authenticateOrCreateUser(username, password)) {
                 out.writeUTF("Authentification réussie!");
                 System.out.println("Authentification réussie pour le client# " + clientNumber);
 
-                // Recevoir l'image du client
+               
                 BufferedImage inputImage = receiveImage(in);
                 System.out.println("Image reçue pour le client# " + clientNumber);
 
-                // Appliquer le filtre Sobel
+             
                 BufferedImage outputImage = GaussianBlur.applyGaussianBlur(inputImage);
                 System.out.println("Filtre de flou Gaussien appliqué pour le client# " + clientNumber);
 
-                // Envoyer l'image traitée au client
+               
                 sendImage(out, outputImage);
                 System.out.println("Image traitée envoyée au client# " + clientNumber);
             } else {
@@ -59,14 +59,14 @@ public class ClientHandler extends Thread {
     }
 
     private boolean authenticateOrCreateUser(String username, String password) {
-        // Vérifier si l'utilisateur existe dans la base de données chargée en mémoire
+        
         if (userDatabase.containsKey(username)) {
-            // Utilisateur existe, vérifier le mot de passe
+            
             return userDatabase.get(username).equals(password);
         } else {
-            // Utilisateur n'existe pas, créer un compte
+           
             userDatabase.put(username, password);
-            saveUserDatabase(); // Enregistrer la base de données mise à jour dans le fichier
+            saveUserDatabase(); 
             return true;
         }
     }
