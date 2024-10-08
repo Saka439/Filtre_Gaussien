@@ -54,44 +54,43 @@ public class Client {
         System.out.println("Entrez le chemin de l'image à traiter : ");
         String imagePath = scanner.next();
 
-        // Établir la connexion avec le serveur
         try {
             socket = new Socket(serverAddress, portDecoute);
             System.out.format("Connecté au serveur [%s:%d]%n", serverAddress, portDecoute);
 
-            // Utiliser DataInputStream et DataOutputStream pour la communication
+            
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             DataInputStream in = new DataInputStream(socket.getInputStream());
 
-            // Envoyer les informations d'identification au serveur
+           
             out.writeUTF(nomDutilisateur);
             out.writeUTF(motDePasse);
 
-            // Recevoir la réponse du serveur
+            
             String response = in.readUTF();
             System.out.println(response);
 
-            // Si l'authentification est réussie, traiter l'image
+           
             if (response.equals("Authentification réussie!")) {
-                // Charger l'image depuis un fichier
+               
                 BufferedImage image = ImageIO.read(new File(imagePath));
 
-                // Envoyer l'image au serveur
+             
                 sendImage(out, image);
                 System.out.println("Image envoyée pour le traitement.");
 
-                // Recevoir l'image traitée du serveur
+                
                 BufferedImage processedImage = receiveImage(in);
                 System.out.println("Image traitée reçue.");
 
-                // Sauvegarder l'image traitée localement
+               
                 System.out.println("Entrez le chemin où vous souhaitez enregistrer l'image traitée : ");
                 String processedImagePath = scanner.next();
                 ImageIO.write(processedImage, "png", new File(processedImagePath));
                 System.out.println("Image traitée sauvegardée.");
             }
 
-            // Fermer la connexion
+          
             scanner.close();
             socket.close();
         } catch (IOException e) {
