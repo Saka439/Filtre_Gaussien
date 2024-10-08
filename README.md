@@ -27,5 +27,6 @@ Sélectionner une image à laquelle appliquer le filtre gaussien.
 
 
 Auteur
+
 NDZANA SAKA
 
