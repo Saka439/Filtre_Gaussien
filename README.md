@@ -1,36 +1,55 @@
-Filtre Gaussien en Java
+# 🖼️ Filtre Gaussien en Java
 
-Description
+[![Java](https://img.shields.io/badge/Java-8+-orange.svg)](https://www.oracle.com/java/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-green.svg)]()
 
-Ce projet implémente un filtre gaussien en Java, utilisé pour appliquer un effet de flou sur des images. Le filtre gaussien est un outil essentiel en traitement d'images pour réduire le bruit et adoucir les contours. Il est couramment utilisé dans des domaines comme la vision par ordinateur, la photographie numérique et les systèmes de reconnaissance d'images.
+## 📋 Description
 
-Fonctionnalités
+Ce projet implémente un **filtre gaussien** en Java pour appliquer des effets de flou sophistiqués sur des images numériques. Le filtre gaussien est un outil fondamental en traitement d'images qui utilise une distribution gaussienne pour créer un effet de lissage naturel et uniforme.
 
-Chargement d'images au format standard (JPEG, PNG, etc.)
-Application d'un filtre gaussien avec un noyau paramétrable
-Sauvegarde de l'image filtrée
-Utilité
-Réduction du bruit dans les images
-Prétraitement des images pour des algorithmes de détection de contours
-Amélioration des images en réduisant les détails inutiles et en conservant les formes principales
+### 🎯 Applications principales
+- **Vision par ordinateur** : Prétraitement des images pour l'analyse automatisée
+- **Photographie numérique** : Amélioration artistique et correction d'images
+- **Systèmes de reconnaissance** : Optimisation des algorithmes de détection
+- **Traitement médical** : Amélioration d'images radiologiques et IRM
 
+## ✨ Fonctionnalités
 
-Matériel nécessaire
+- 📂 **Support multi-formats** : Chargement d'images JPEG, PNG, BMP, GIF
+- ⚙️ **Noyau paramétrable** : Contrôle précis de l'intensité du flou
+- 🎛️ **Sigma ajustable** : Personnalisation de la distribution gaussienne
+- 💾 **Sauvegarde optimisée** : Export haute qualité des images traitées
+- 🚀 **Performance optimisée** : Traitement efficace même pour les grandes images
+- 🔄 **Interface intuitive** : Utilisation simple et ergonomique
 
+## 🛠️ Utilités techniques
 
-Eclipse IDE (ou tout autre IDE Java compatible)
-Java JDK 8 ou supérieur
-Bibliothèque de manipulation d'images (par exemple, java.awt.image pour les images)
-Une image à tester (formats supportés : JPEG, PNG)
-Installation et exécution
-Cloner ce dépôt ou télécharger le projet.
-Ouvrir le projet dans Eclipse IDE.
-S'assurer que le JDK est installé et configuré.
-Compiler et exécuter le programme.
-Sélectionner une image à laquelle appliquer le filtre gaussien.
+| Fonctionnalité | Description | Cas d'usage |
+|----------------|-------------|-------------|
+| **Réduction du bruit** | Suppression des artefacts parasites | Images de faible qualité, photos nocturnes |
+| **Prétraitement** | Préparation pour détection de contours | Canny, Sobel, Laplacien |
+| **Lissage sélectif** | Conservation des formes principales | Segmentation d'images, reconnaissance de formes |
+| **Anti-aliasing** | Réduction des effets d'escalier | Redimensionnement, amélioration visuelle |
 
+## 🔧 Prérequis
 
-Auteur
+### Logiciels requis
+- **Java JDK** 8 ou supérieur ([Télécharger ici](https://www.oracle.com/java/technologies/downloads/))
+- **IDE recommandé** : 
+  - Eclipse IDE ([Télécharger](https://www.eclipse.org/downloads/))
+  - IntelliJ IDEA ([Télécharger](https://www.jetbrains.com/idea/))
+  - Visual Studio Code avec extension Java
 
-NDZANA SAKA
+### Bibliothèques utilisées
+- `java.awt.image.BufferedImage` - Manipulation d'images
+- `javax.imageio.ImageIO` - Lecture/écriture de fichiers image
+- `java.awt.Graphics2D` - Rendu graphique avancé
+
+### Formats d'images supportés
+- ✅ JPEG (.jpg, .jpeg)
+- ✅ PNG (.png)
+- ✅ BMP (.bmp)
+- ✅ GIF (.gif)
+
 
